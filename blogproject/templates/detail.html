@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+  <div class = 'container'>
+    <div class = 'card'>
+      <h5 class = 'card-header'>{{object.category}}</h5>
+      <div class = "card-body">
+        <h5 class = 'card-title'>{{object.title}}</h5>
+        <p class = 'card-text'>{{object.content}}</p>
+        <div class="row">
+          <div class="col-md">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+              <a　href="{% url 'list' %}" class="btn btn-primary">一覧へ</a>
+            </div>
+            <div class="btn-group mr-2" role="group" aria-label="Second group">
+              <a　href="{% url 'update' object.pk %}" class="btn btn-primary">編集する</a>
+            </div>
+            <div class="btn-group mr-2" role="group" aria-label="Third group">
+              <a　href="{% url 'delete' object.pk %}" class="btn btn-primary">削除する</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
